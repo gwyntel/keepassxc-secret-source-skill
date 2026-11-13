@@ -109,6 +109,11 @@ keepassxc-secret-source-skill/
   `SKILL.md` (`keepassxc-secret-source`) matches the skill directory, and pass
   `--skill` explicitly when installing from this repo (repo name carries a `-skill`
   suffix, the skill name does not).
+- **`npx skills` dies with `does not provide an export named 'glob'`** — the CLI needs
+  Node 22+; an older `node` on PATH (20.x) fails at import time. Use a newer Node or
+  `npx -y skills@latest` under one.
+- **Valid agent ids** — `-a claude` is rejected; the ids are `claude-code`, `codex`,
+  `hermes-agent`, … (`npx skills add --help` lists them).
 
 ## License
 
